@@ -5,7 +5,6 @@ class Solution {
         for(int i = 0; i < s.length(); i++){
             arr[s.charAt(i)-'a'+50] += 1;
         }
-        Arrays.sort(arr);
         for(int i = 0; i< arr.length; i++){
             if(arr[i]%2 == 0){
                 ans += arr[i];
