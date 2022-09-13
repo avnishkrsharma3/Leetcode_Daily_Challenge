@@ -1,10 +1,9 @@
 class Solution {
     public boolean validUtf8(int[] data) {
         
-        for(int i  = 0; i < data.length; i++){
-            
+        for(int i  = 0; i < data.length; i++){            
             int nByte = nByte(data[i]);
-            System.out.println(nByte + "  " );
+          //  System.out.println(nByte + "  " );
             if(nByte == 1 || nByte > 4) return false;
             int j  = 0;
             for(j = i+1; j < i+nByte; j++){
