@@ -14,21 +14,18 @@
  * }
  */
 class Solution {
-    int cnt ;
-  
+    int cnt ;  
     public int pseudoPalindromicPaths (TreeNode root) {
         cnt = 0;       
         dfs(root, new int[10]);
         return cnt;
-    }
-    
+    }    
     private void dfs(TreeNode root, int [] arr){
         if(root == null) return;
         if(root.left == null && root.right == null){
             int odd = 0; 
             arr[root.val] += 1;
             for(int i : arr){
-               //  System.out.println(i);
                  if(odd >= 1 && i % 2 == 1){
                      arr[root.val] -= 1;
                      return;
@@ -46,7 +43,7 @@ class Solution {
             dfs(root.left, arr);
             arr[root.val] -= 1;
     }
-    private boolean check(List<Integer>list){
+  /*  private boolean check(List<Integer>list){
         HashMap<Integer, Integer> map = new HashMap<>();
         boolean flag = true;
         for(int i : list){
@@ -64,5 +61,5 @@ class Solution {
         return true;
     }
     // aaaccc
-    // aca a aca
+    // aca a aca */
 }
