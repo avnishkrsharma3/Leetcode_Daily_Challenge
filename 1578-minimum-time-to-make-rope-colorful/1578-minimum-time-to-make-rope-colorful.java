@@ -3,12 +3,13 @@ class Solution {
         int left = 0;
         int right = 0;
         int result = 0;
-        while(right < colors.length()){
+        char [] charArr = colors.toCharArray();
+        while(right < charArr.length){
             int sum = 0;
             int max = 0;
             boolean flag = false;
-            char ch = colors.charAt(right);
-            while(right  < colors.length() && ch == colors.charAt(right)){
+            char ch = charArr[right];
+            while(right  < charArr.length && ch == charArr[right]){
                      sum += neededTime[right]; 
                      max = Math.max(max, neededTime[right]);
                      right += 1; flag = true;
