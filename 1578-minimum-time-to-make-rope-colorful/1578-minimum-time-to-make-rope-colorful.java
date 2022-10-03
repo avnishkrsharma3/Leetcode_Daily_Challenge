@@ -7,15 +7,13 @@ class Solution {
             int sum = 0;
             int max = 0;
             boolean flag = false;
-            if(right+1 < colors.length()){
-                char ch = colors.charAt(right);
-                while(right  < colors.length() && ch == colors.charAt(right)){
+            char ch = colors.charAt(right);
+            while(right  < colors.length() && ch == colors.charAt(right)){
                      sum += neededTime[right]; 
                      max = Math.max(max, neededTime[right]);
                      right += 1; flag = true;
                 }
                 result += (sum - max);
-            }
             if(!flag){
                 right += 1;
                 left = right;
