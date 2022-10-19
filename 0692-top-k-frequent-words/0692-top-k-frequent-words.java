@@ -28,8 +28,8 @@ class Solution {
         return retList;
     }
     class Pair{
-        int cnt;
-        String str;
+        private int cnt;
+        private String str;
         Pair(int cnt, String str){
             this.cnt = cnt;
             this.str = str;
