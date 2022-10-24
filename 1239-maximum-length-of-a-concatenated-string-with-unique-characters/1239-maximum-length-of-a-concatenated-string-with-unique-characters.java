@@ -5,7 +5,7 @@ class Solution {
     }
     
     private int util(List<String> list, int idx, String str){
-      
+        
         if(idx == list.size()){
            // System.out.println(str);
             if(isSame(str, ""))
@@ -14,9 +14,13 @@ class Solution {
                 return str.length();
         }  
         String  st = list.get(idx);
-      
-        int a = util(list, idx + 1, str + st);
-        int b = util(list, idx + 1, str);
+        int a = 0, b = 0;
+        if(!isSame(st, str)) {
+             a = util(list, idx + 1, str + st);
+             b = util(list, idx + 1, str);
+        }
+        else
+         b = util(list, idx + 1, str);
             return Math.max(a,b);        
     }
     
