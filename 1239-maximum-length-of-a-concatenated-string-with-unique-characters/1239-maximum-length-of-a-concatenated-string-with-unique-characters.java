@@ -26,12 +26,11 @@ class Solution {
     
     private boolean isSame(String str1, String str2){
         String st = str1 + str2;
+        int []arr = new int[26];
         for(int i = 0; i < st.length(); i++){
-            for(int j = i+1; j < st.length(); j++){
-                if(st.charAt(i) == st.charAt(j)){
-                    return true;
-                }
-            }
+            int idx = st.charAt(i) - 'a';
+            arr[ idx ] += 1;
+            if(arr[idx] >= 2) return true;
         }
         return false;
     }
