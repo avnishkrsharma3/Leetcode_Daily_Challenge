@@ -8,9 +8,9 @@ class Solution {
         
         if(idx == list.size()){
            // System.out.println(str);
-            if(isSame(str, ""))
-                return 0;
-            else
+            // if(isSame(str, ""))
+            //     return 0;
+            // else
                 return str.length();
         }  
         String  st = list.get(idx);
