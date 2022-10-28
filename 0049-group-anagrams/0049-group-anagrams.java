@@ -4,12 +4,12 @@ class Solution {
         for(int i = 0; i < strs.length; i++){
             char ch[] = strs[i].toCharArray();
             Arrays.sort(ch);
-            // StringBuilder sb = new StringBuilder();
-            // for(int j  = 0; j < ch.length; j++){
-            //     sb.append(ch[j]);
-            // }
-            String st = String.valueOf(ch);
-            Pair p = new Pair(st, i);
+            StringBuilder sb = new StringBuilder();
+            for(int j  = 0; j < ch.length; j++){
+                sb.append(ch[j]);
+            }
+           // String st = String.valueOf(ch);
+            Pair p = new Pair(sb.toString(), i);
             copy[i] = p;
         }
         Arrays.sort( copy, (p1, p2) -> {
