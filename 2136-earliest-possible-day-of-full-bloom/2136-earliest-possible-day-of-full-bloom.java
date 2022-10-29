@@ -7,34 +7,45 @@ class Solution {
         }
         Arrays.sort(arr, (p1, p2) -> p2.gt - p1.gt);
         
-        int time = 0;
-        int grwt = 0;
-        for(int i = 0; i < arr.length; i++){
-            time += arr[i].pt;
-            grwt += arr[i].gt;
-            if(i < arr.length - 1){
-                // if( grwt >= arr[i+1].pt ){
-                //     grwt -= arr[i+1].pt;
-                //     if(grwt >= arr[i+1].gt ){
-                //         grwt -= arr[i+1].gt;
-                //     }
-                //     else{
-                //         grwt = 0;
-                //     }
-                // }
-                // else{
-                //     grwt = 0;
-                // }
-                if(i < arr.length - 1 && grwt - (arr[i+1].pt + arr[i+1].gt) > 0){
-                    grwt -= (arr[i+1].pt + arr[i+1].gt);
-                }
-                else{
-                    grwt = 0;
-                }
-            }
+//         int time = 0;
+//         int grwt = 0;
+//         for(int i = 0; i < arr.length; i++){
+//             time += arr[i].pt;
+//             grwt += arr[i].gt;
+//             if(i < arr.length - 1){
+//                 // if( grwt >= arr[i+1].pt ){
+//                 //     grwt -= arr[i+1].pt;
+//                 //     if(grwt >= arr[i+1].gt ){
+//                 //         grwt -= arr[i+1].gt;
+//                 //     }
+//                 //     else{
+//                 //         grwt = 0;
+//                 //     }
+//                 // }
+//                 // else{
+//                 //     grwt = 0;
+//                 // }
+//                 if(i < arr.length - 1 && grwt - (arr[i+1].pt + arr[i+1].gt) > 0){
+//                     grwt -= (arr[i+1].pt + arr[i+1].gt);
+//                 }
+//                 else{
+//                     grwt = 0;
+//                 }
+//             }
+//         }
+        
+//         return time +  grwt ;
+        
+        
+        int start =0;
+        int ans = 0;
+        
+        for(int i =0; i < arr.length; i++){
+            start += arr[i].pt;
+            ans  = Math.max(ans, start + arr[i].gt);
         }
         
-        return time +  grwt ;
+        return ans;
     }
     class Pair{
         int pt = 0;
