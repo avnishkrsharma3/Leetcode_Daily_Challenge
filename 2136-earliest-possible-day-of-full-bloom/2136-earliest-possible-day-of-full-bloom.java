@@ -25,7 +25,7 @@ class Solution {
                 // else{
                 //     grwt = 0;
                 // }
-                if(grwt - (arr[i+1].pt + arr[i+1].gt) > 0){
+                if(i < arr.length - 1 && grwt - (arr[i+1].pt + arr[i+1].gt) > 0){
                     grwt -= (arr[i+1].pt + arr[i+1].gt);
                 }
                 else{
