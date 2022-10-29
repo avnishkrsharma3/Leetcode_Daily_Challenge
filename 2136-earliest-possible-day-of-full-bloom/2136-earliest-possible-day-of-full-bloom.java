@@ -13,14 +13,20 @@ class Solution {
             time += arr[i].pt;
             grwt += arr[i].gt;
             if(i < arr.length - 1){
-                if( grwt >= arr[i+1].pt ){
-                    grwt -= arr[i+1].pt;
-                    if(grwt >= arr[i+1].gt ){
-                        grwt -= arr[i+1].gt;
-                    }
-                    else{
-                        grwt = 0;
-                    }
+                // if( grwt >= arr[i+1].pt ){
+                //     grwt -= arr[i+1].pt;
+                //     if(grwt >= arr[i+1].gt ){
+                //         grwt -= arr[i+1].gt;
+                //     }
+                //     else{
+                //         grwt = 0;
+                //     }
+                // }
+                // else{
+                //     grwt = 0;
+                // }
+                if(grwt - (arr[i+1].pt + arr[i+1].gt) > 0){
+                    grwt -= (arr[i+1].pt + arr[i+1].gt);
                 }
                 else{
                     grwt = 0;
