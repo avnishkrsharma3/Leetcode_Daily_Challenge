@@ -34,7 +34,7 @@ class Solution {
      
             int aPointer = A.length() - 1;
             int bPointer = B.length() - 1;
-            while(bPointer>=0 && aPointer>=0){
+            while(bPointer>=0 && aPointer>=0){ // 110110  111111
                 int sum  = Integer.parseInt(String.valueOf(A.charAt(aPointer))) +
                   Integer.parseInt(String.valueOf(B.charAt(bPointer))) + carry;
                 if(sum >= 2){
